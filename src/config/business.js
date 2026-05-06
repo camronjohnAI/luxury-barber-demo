@@ -21,7 +21,7 @@ const profiles = {
       tagline: 'The Art of Refined Grooming',         // ✏️ Tagline
       subTagline: 'Where Precision Meets Prestige',   // ✏️ Sub-tagline
       phone: '+971 50 878 2699',                      // ✏️ Phone number (display)
-      whatsapp: '971508782699',                       // ✏️ WhatsApp number (no + or spaces)
+      whatsapp: '971558069702',                       // ✏️ WhatsApp number (no + or spaces)
       email: '',                                      // ✏️ Email
       address: 'Reef Village, Abu Dhabi, UAE',        // ✏️ Address
       city: 'Abu Dhabi',
