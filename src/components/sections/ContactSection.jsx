@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { motion } from 'framer-motion'
 import { MapPin, Phone, Mail, Clock, MessageCircle, ExternalLink } from 'lucide-react'
 import { config } from '../../config/business'
@@ -27,10 +28,30 @@ export default function ContactSection() {
           >
             <h3 className="text-gold text-xs font-semibold tracking-widest uppercase mb-6">Contact</h3>
             <ul className="space-y-5">
-              <ContactItem icon={MapPin}>{brand.address}</ContactItem>
-              <ContactItem icon={Phone}>
-                <a href={`tel:${brand.phone}`} className="hover:text-gold transition-colors">{brand.phone}</a>
-              </ContactItem>
+              {brand.branches?.length > 0 ? (
+                brand.branches.map((branch) => (
+                  <Fragment key={branch.name}>
+                    <li className="pb-1">
+                      <p className="text-gold text-[11px] font-bold uppercase tracking-wider mb-2">{branch.name}</p>
+                      <div className="space-y-2">
+                        <ContactItem icon={MapPin}>
+                          <a href={branch.mapsUrl} target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">{branch.address}</a>
+                        </ContactItem>
+                        <ContactItem icon={Phone}>
+                          <a href={`tel:${branch.phone}`} className="hover:text-gold transition-colors">{branch.phone}</a>
+                        </ContactItem>
+                      </div>
+                    </li>
+                  </Fragment>
+                ))
+              ) : (
+                <>
+                  <ContactItem icon={MapPin}>{brand.address}</ContactItem>
+                  <ContactItem icon={Phone}>
+                    <a href={`tel:${brand.phone}`} className="hover:text-gold transition-colors">{brand.phone}</a>
+                  </ContactItem>
+                </>
+              )}
               {brand.email && (
                 <ContactItem icon={Mail}>
                   <a href={`mailto:${brand.email}`} className="hover:text-gold transition-colors">{brand.email}</a>
@@ -101,6 +122,28 @@ export default function ContactSection() {
                 loading="lazy"
                 title="Location map"
               />
+            ) : brand.branches?.length > 0 ? (
+              <div className="flex flex-col justify-center h-full p-8 gap-6" style={{ minHeight: '320px' }}>
+                <div className="flex items-center gap-2 mb-2">
+                  <MapPin size={18} className="text-gold shrink-0" />
+                  <p className="text-cream text-sm font-semibold">Our Locations</p>
+                </div>
+                {brand.branches.map((branch) => (
+                  <a
+                    key={branch.name}
+                    href={branch.mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="border border-charcoal-border hover:border-gold/40 p-4 transition-colors duration-200 hover:bg-charcoal-light group"
+                  >
+                    <p className="text-gold text-[11px] font-bold uppercase tracking-wider mb-1">{branch.name}</p>
+                    <p className="text-cream-muted text-xs leading-relaxed mb-3">{branch.address}</p>
+                    <span className="text-gold text-[11px] font-medium group-hover:underline">
+                      Open in Google Maps →
+                    </span>
+                  </a>
+                ))}
+              </div>
             ) : (
               <a
                 href={brand.mapsUrl}

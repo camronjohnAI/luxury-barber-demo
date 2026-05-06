@@ -39,6 +39,25 @@ ON CONFLICT (id) DO UPDATE SET
   duration = EXCLUDED.duration,
   active   = TRUE;
 
+-- Epic Hair Studios services
+INSERT INTO services (id, name, price, currency, duration) VALUES
+  ('epic-standard-cut',   'Standard Haircut',    65,  'AED', '30 min'),
+  ('epic-haircut-beard',  'Haircut & Beard',     85,  'AED', '50 min'),
+  ('epic-fade',           'Fade',                75,  'AED', '35 min'),
+  ('epic-fade-beard',     'Fade & Beard',        85,  'AED', '50 min'),
+  ('epic-beard',          'Beard',               45,  'AED', '25 min'),
+  ('epic-kids-cut',       'Kids'' Haircut',      45,  'AED', '25 min'),
+  ('epic-braids',         'Braids / Cornrows',   200, 'AED', '90 min'),
+  ('epic-locs-retwist',   'Locs Retwist',        180, 'AED', '90 min'),
+  ('epic-interlocking',   'Interlocking',        250, 'AED', '120 min'),
+  ('epic-perm',           'Perm',                350, 'AED', '120 min')
+ON CONFLICT (id) DO UPDATE SET
+  name     = EXCLUDED.name,
+  price    = EXCLUDED.price,
+  currency = EXCLUDED.currency,
+  duration = EXCLUDED.duration,
+  active   = TRUE;
+
 -- -----------------------------------------------------------------------------
 -- BARBERS  (id matches the slug IDs in src/config/business.js)
 -- -----------------------------------------------------------------------------

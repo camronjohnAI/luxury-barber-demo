@@ -21,8 +21,8 @@ export default function HeroSection() {
         style={{
           backgroundImage: `repeating-linear-gradient(
             45deg,
-            #C9A84C 0px,
-            #C9A84C 1px,
+            var(--accent) 0px,
+            var(--accent) 1px,
             transparent 1px,
             transparent 60px
           )`,
