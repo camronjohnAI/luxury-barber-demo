@@ -17,15 +17,15 @@ const profiles = {
   // ===========================================================================
   luxuryDubai: {
     brand: {
-      name: 'The Sovereign',                          // ✏️ Shop name
+      name: 'Scissor Mens Salon',                      // ✏️ Shop name
       tagline: 'The Art of Refined Grooming',         // ✏️ Tagline
       subTagline: 'Where Precision Meets Prestige',   // ✏️ Sub-tagline
-      phone: '+971 50 123 4567',                      // ✏️ Phone number (display)
-      whatsapp: '971501234567',                       // ✏️ WhatsApp number (no + or spaces)
-      email: 'hello@thesovereign.ae',                 // ✏️ Email
-      address: 'DIFC Gate Village, Dubai, UAE',       // ✏️ Address
-      city: 'Dubai',
-      mapsUrl: 'https://maps.google.com/?q=DIFC+Dubai+UAE',  // ✏️ Google Maps link
+      phone: '+971 50 878 2699',                      // ✏️ Phone number (display)
+      whatsapp: '971508782699',                       // ✏️ WhatsApp number (no + or spaces)
+      email: '',                                      // ✏️ Email
+      address: 'Reef Village, Abu Dhabi, UAE',        // ✏️ Address
+      city: 'Abu Dhabi',
+      mapsUrl: 'https://maps.google.com/?q=Reef+Village+Abu+Dhabi+UAE',  // ✏️ Google Maps link
       mapEmbedUrl: '',                                // ✏️ Paste Google Maps embed URL here
       instagram: 'https://instagram.com/thesovereign.ae',    // ✏️ Instagram URL
       tiktok: '',
@@ -43,7 +43,7 @@ const profiles = {
       headline: 'Craft.',           // ✏️ First word of headline
       headlineAccent: 'Precision.', // ✏️ Gold accent word
       headlineEnd: 'Legacy.',       // ✏️ Last word of headline
-      subheadline: "Dubai's most exclusive grooming experience — where every cut is a statement.",
+      subheadline: "Abu Dhabi's most exclusive grooming experience — where every cut is a statement.",
       cta: 'Book Your Appointment',
       ctaSecondary: 'View Services',
       urgency: 'Only 3 slots remaining today',
