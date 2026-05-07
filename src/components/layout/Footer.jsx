@@ -1,4 +1,4 @@
-import { Scissors, ExternalLink, Phone, MapPin } from 'lucide-react'
+import { ExternalLink, Phone, MapPin } from 'lucide-react'
 import { config } from '../../config/business'
 
 export default function Footer() {
@@ -10,9 +10,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <Scissors size={16} className="text-gold" />
-              <span className="font-heading text-lg font-bold text-cream">{config.brand.name}</span>
+            <div className="mb-4">
+              <img
+                src="/scissor-razor-logo.webp"
+                alt={config.brand.name}
+                className="h-12 md:h-16 w-auto object-contain"
+              />
             </div>
             <p className="text-cream-muted text-sm leading-relaxed">{config.brand.tagline}</p>
             {config.brand.instagram && (

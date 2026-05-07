@@ -1,30 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
 @import "tailwindcss";
 
-/* ===== ACCENT COLOR — change here to switch the entire palette =====
-   Gold option:   #D4AF37  light: #F0CD5A  dark: #B8942A  muted: #8A6C1A  dim/hairline uses rgba(212,175,55)
-   Orange option: #E07820  light: #F09540  dark: #D06818  muted: #A85810  dim/hairline uses rgba(224,120,32)  ← current
-   ================================================================== */
+/* ===== THEME PRESET — change the values below to switch the entire site theme =====
+
+   To switch themes, replace ALL values in :root with one of the presets below.
+
+   ── EPIC HAIR STUDIOS (warm orange) ──────────────────────────────────────────
+   --accent: #E07820;  --accent-light: #F09540;  --accent-dark: #D06818;
+   --accent-muted: #A85810;  --accent-dim: rgba(224,120,32,0.15);  --accent-hairline: rgba(224,120,32,0.18);
+   --theme-bg: #0A0A0A;  --theme-surface: #141414;  --theme-surface-2: #1E1E1E;
+   --theme-border: #2A2A2A;  --theme-text: #F5F0E8;  --theme-text-muted: #C8C0B0;
+
+   ── GOLD CLASSIC ─────────────────────────────────────────────────────────────
+   --accent: #D4AF37;  --accent-light: #F0CD5A;  --accent-dark: #B8942A;
+   --accent-muted: #8A6C1A;  --accent-dim: rgba(212,175,55,0.15);  --accent-hairline: rgba(212,175,55,0.18);
+   --theme-bg: #0A0A0A;  --theme-surface: #141414;  --theme-surface-2: #1E1E1E;
+   --theme-border: #2A2A2A;  --theme-text: #F5F0E8;  --theme-text-muted: #C8C0B0;
+
+   ── BLADE BARBERS (silver / white glow) — ACTIVE ─────────────────────────────
+   --accent: #D0D0D0;  --accent-light: #FFFFFF;  --accent-dark: #A0A0A0;
+   --accent-muted: #606060;  --accent-dim: rgba(208,208,208,0.12);  --accent-hairline: rgba(255,255,255,0.12);
+   --theme-bg: #080808;  --theme-surface: #111111;  --theme-surface-2: #1A1A1A;
+   --theme-border: #2E2E2E;  --theme-text: #F0F0F0;  --theme-text-muted: #909090;
+   ============================================================================= */
 :root {
-  --accent:          #E07820;
-  --accent-light:    #F09540;
-  --accent-dark:     #D06818;
-  --accent-muted:    #A85810;
-  --accent-dim:      rgba(224, 120, 32, 0.15);
-  --accent-hairline: rgba(224, 120, 32, 0.18);
+  /* ACTIVE THEME: Blade Barbers (silver / white glow) */
+  --accent:          #D0D0D0;
+  --accent-light:    #FFFFFF;
+  --accent-dark:     #A0A0A0;
+  --accent-muted:    #606060;
+  --accent-dim:      rgba(208, 208, 208, 0.12);
+  --accent-hairline: rgba(255, 255, 255, 0.12);
+
+  --theme-bg:         #080808;
+  --theme-surface:    #111111;
+  --theme-surface-2:  #1A1A1A;
+  --theme-border:     #2E2E2E;
+  --theme-text:       #F0F0F0;
+  --theme-text-muted: #909090;
 }
 
 @theme {
-  --color-gold:        var(--accent);
-  --color-gold-light:  var(--accent-light);
-  --color-gold-muted:  var(--accent-muted);
-  --color-gold-dim:    var(--accent-dim);
-  --color-black: #0A0A0A;
-  --color-charcoal: #141414;
-  --color-charcoal-light: #1E1E1E;
-  --color-charcoal-border: #2A2A2A;
-  --color-cream: #F5F0E8;
-  --color-cream-muted: #C8C0B0;
+  --color-gold:            var(--accent);
+  --color-gold-light:      var(--accent-light);
+  --color-gold-muted:      var(--accent-muted);
+  --color-gold-dim:        var(--accent-dim);
+  --color-black:           var(--theme-bg);
+  --color-charcoal:        var(--theme-surface);
+  --color-charcoal-light:  var(--theme-surface-2);
+  --color-charcoal-border: var(--theme-border);
+  --color-cream:           var(--theme-text);
+  --color-cream-muted:     var(--theme-text-muted);
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-body: 'Inter', system-ui, sans-serif;
 }
@@ -41,8 +67,8 @@
   }
 
   body {
-    background-color: #0A0A0A;
-    color: #F5F0E8;
+    background-color: var(--theme-bg);
+    color: var(--theme-text);
     font-family: 'Inter', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

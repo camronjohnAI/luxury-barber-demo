@@ -13,249 +13,215 @@ export const ACTIVE_PROFILE = 'luxuryDubai'
 const profiles = {
 
   // ===========================================================================
-  // PROFILE 1: LUXURY DUBAI BARBER
+  // PROFILE 1: BLADE BARBERS DUBAI
   // ===========================================================================
   luxuryDubai: {
     brand: {
-      name: 'Scissor Mens Salon',                      // ✏️ Shop name
-      tagline: 'The Art of Refined Grooming',         // ✏️ Tagline
-      subTagline: 'Where Precision Meets Prestige',   // ✏️ Sub-tagline
-      phone: '+971 50 878 2699',                      // ✏️ Phone number (display)
-      whatsapp: '971558069702',                       // ✏️ WhatsApp number (no + or spaces)
+      name: 'The Scissors N Razors',                  // ✏️ Shop name
+      tagline: 'Precision Cuts. Premium Grooming.',   // ✏️ Tagline
+      subTagline: 'Sharp fades, clean styling, premium service.', // ✏️ Sub-tagline
+      phone: '+971 55 495 5755',                      // ✏️ Phone number (display)
+      whatsapp: '971554955755',                       // ✏️ Primary WhatsApp (no + or spaces)
+      whatsapp2: '971568687084',                      // ✏️ Secondary WhatsApp (no + or spaces)
       email: '',                                      // ✏️ Email
-      address: 'Reef Village, Abu Dhabi, UAE',        // ✏️ Address
+      address: 'Al Sari Building, near Meat Mart, behind Lulu Xpress, Hamdan Street, Abu Dhabi', // ✏️ Address
       city: 'Abu Dhabi',
-      mapsUrl: 'https://maps.google.com/?q=Reef+Village+Abu+Dhabi+UAE',  // ✏️ Google Maps link
+      mapsUrl: 'https://maps.google.com/?q=Al+Sari+Building+Hamdan+Street+Abu+Dhabi+UAE', // ✏️ Google Maps link
       mapEmbedUrl: '',                                // ✏️ Paste Google Maps embed URL here
-      instagram: 'https://instagram.com/epichairstudios',    // ✏️ Instagram URL
+      instagram: '',                                  // ✏️ Instagram URL
+      website: 'https://thescissorsnrazors.com/',    // ✏️ Website URL
       tiktok: '',
-      logo: '/client-logo.png',
-      branches: [
-        {
-          name: 'Abu Dhabi',
-          address: 'Level 1, Baynonah Tower 1 – Akasshat St – Corner Al Layyanah St – Abu Dhabi',
-          phone: '+971 55 806 9702',
-          whatsapp: '971558069702',
-          mapsUrl: 'https://maps.google.com/?q=Baynonah+Tower+Akasshat+St+Abu+Dhabi+UAE',
-        },
-        {
-          name: 'Dubai',
-          address: 'Al Furjan Rose Residence 2, Shop no. 2 – Dubai',
-          phone: '+971 55 113 4060',
-          whatsapp: '971551134060',
-          mapsUrl: 'https://maps.google.com/?q=Al+Furjan+Rose+Residence+Dubai+UAE',
-        },
-      ],
+      logo: '/scissor-razor-logo.webp',              // ✏️ Place logo in /public and update filename
     },
 
     colors: {
-      primary: '#C9A84C',
-      primaryLight: '#E8C97A',
-      bg: '#0A0A0A',
-      surface: '#141414',
-      text: '#F5F0E8',
+      primary: '#C8C8C8',
+      primaryLight: '#FFFFFF',
+      bg: '#080808',
+      surface: '#111111',
+      text: '#F0F0F0',
     },
 
     hero: {
-      headline: 'Craft.',           // ✏️ First word of headline
-      headlineAccent: 'Precision.', // ✏️ Gold accent word
-      headlineEnd: 'Legacy.',       // ✏️ Last word of headline
-      subheadline: "Abu Dhabi's most exclusive grooming experience — where every cut is a statement.",
+      headline: 'Sharp.',           // ✏️ First word of headline
+      headlineAccent: 'Fades.',     // ✏️ Accent word
+      headlineEnd: 'Style.',         // ✏️ Last word of headline
+      subheadline: "Abu Dhabi's premier grooming destination — precision-crafted for the modern gentleman.",
       cta: 'Book Your Appointment',
       ctaSecondary: 'View Services',
-      urgency: 'Only 3 slots remaining today',
+      urgency: 'Limited slots available today',
       trustBadges: [
-        { icon: 'Award', label: '5-Star Rated' },
-        { icon: 'Clock', label: 'Book in 30 Seconds' },
+        { icon: 'Award', label: '4.9 Google Rating' },
+        { icon: 'Star', label: '900+ Reviews' },
+        { icon: 'Scissors', label: 'Expert Faders' },
         { icon: 'Shield', label: 'Premium Experience' },
-        { icon: 'Users', label: '500+ Happy Clients' },
       ],
     },
 
     services: [                     // ✏️ Edit service names, prices, descriptions
       {
-        id: 'epic-standard-cut',
-        name: 'Standard Haircut',
-        price: 65,
+        id: 'blade-skin-fade',
+        name: 'Skin Fade',
+        price: 145,
         currency: 'AED',
-        duration: '30 min',
-        description: 'A clean, precise haircut tailored to your style and face shape. Fresh look, every time.',
+        duration: '45 min',
+        description: 'Our signature zero-to-skin fade — seamlessly blended, razor-sharp, and finished to perfection.',
         popular: true,
-        image: 'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&h=500&q=80&auto=format&fit=crop',
+        image: 'https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&h=500&q=80&auto=format&fit=crop',
       },
       {
-        id: 'epic-haircut-beard',
-        name: 'Haircut & Beard',
-        price: 85,
+        id: 'blade-skin-fade-beard',
+        name: 'Skin Fade & Beard',
+        price: 190,
         currency: 'AED',
-        duration: '50 min',
-        description: 'Precision cut combined with expert beard trimming and shaping for a complete, polished look.',
+        duration: '60 min',
+        description: 'The full package — a flawless skin fade paired with expert beard shaping and a clean line-up.',
         popular: true,
         image: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&h=500&q=80&auto=format&fit=crop',
       },
       {
-        id: 'epic-fade',
-        name: 'Fade',
-        price: 75,
+        id: 'blade-taper-fade',
+        name: 'Taper Fade',
+        price: 135,
         currency: 'AED',
-        duration: '35 min',
-        description: 'Flawless skin or tapered fade with seamless blending. The mark of skilled barbering.',
+        duration: '40 min',
+        description: 'A clean, graduated taper fade that works with any hair type or length — timeless and versatile.',
         popular: false,
-        image: 'https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&h=500&q=80&auto=format&fit=crop',
+        image: 'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&h=500&q=80&auto=format&fit=crop',
       },
       {
-        id: 'epic-fade-beard',
-        name: 'Fade & Beard',
-        price: 85,
+        id: 'blade-taper-fade-beard',
+        name: 'Taper Fade & Beard',
+        price: 180,
         currency: 'AED',
-        duration: '50 min',
-        description: 'Our signature fade paired with precise beard sculpting — the full package in one visit.',
+        duration: '55 min',
+        description: 'Premium taper fade with precision beard sculpting — sharp lines, clean finish, complete look.',
         popular: false,
         image: 'https://images.unsplash.com/photo-1567894340315-735d7c361db0?w=800&h=500&q=80&auto=format&fit=crop',
       },
       {
-        id: 'epic-beard',
-        name: 'Beard',
-        price: 45,
+        id: 'blade-beard',
+        name: 'Beard Grooming',
+        price: 95,
         currency: 'AED',
-        duration: '25 min',
-        description: 'Expert beard trimming, shaping, and line-up with a clean straight razor finish.',
+        duration: '30 min',
+        description: 'Expert beard trim, shaping, and straight razor line-up. Define your look with precision.',
         popular: false,
         image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&h=500&q=80&auto=format&fit=crop',
       },
       {
-        id: 'epic-kids-cut',
-        name: "Kids' Haircut",
-        price: 45,
-        currency: 'AED',
-        duration: '25 min',
-        description: 'Gentle, precise cuts for young gentlemen. Patient, professional, and fun service.',
-        popular: false,
-        image: 'https://images.unsplash.com/photo-1534297635766-a262cdcb8ee4?w=800&h=500&q=80&auto=format&fit=crop',
-      },
-      {
-        id: 'epic-braids',
-        name: 'Braids / Cornrows',
-        price: 200,
+        id: 'blade-braids',
+        name: 'Braids & Dreads',
+        price: 250,
         currency: 'AED',
         duration: '90 min',
-        description: 'Expertly crafted braids and cornrows with clean, tight lines and lasting definition.',
+        description: 'Expertly crafted braids, cornrows, and dread styling with clean, defined, lasting results.',
         popular: false,
         image: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=800&h=500&q=80&auto=format&fit=crop',
       },
       {
-        id: 'epic-locs-retwist',
-        name: 'Locs Retwist',
-        price: 180,
+        id: 'blade-colour',
+        name: 'Hair Colouring',
+        price: 200,
         currency: 'AED',
-        duration: '90 min',
-        description: 'Professional retwisting to keep your locs neat, defined, and healthy.',
+        duration: '60 min',
+        description: 'Professional hair colouring, highlights, and treatments — bold or subtle, always precise.',
         popular: false,
-        image: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&h=500&q=80&auto=format&fit=crop',
+        image: 'https://images.unsplash.com/photo-1534297635766-a262cdcb8ee4?w=800&h=500&q=80&auto=format&fit=crop',
       },
       {
-        id: 'epic-interlocking',
-        name: 'Interlocking',
-        price: 250,
-        currency: 'AED',
-        duration: '120 min',
-        description: 'Advanced interlocking technique for tighter, longer-lasting locs maintenance.',
-        popular: false,
-        image: 'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&h=500&q=80&auto=format&fit=crop',
-      },
-      {
-        id: 'epic-perm',
-        name: 'Perm',
+        id: 'blade-vip',
+        name: 'VIP Grooming Package',
         price: 350,
         currency: 'AED',
-        duration: '120 min',
-        description: 'Transform your texture with a professional perm for lasting curls and waves.',
+        duration: '90 min',
+        description: 'The ultimate grooming experience — premium cut, beard sculpt, hot towel treatment, and finishing.',
         popular: false,
-        image: 'https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&h=500&q=80&auto=format&fit=crop',
+        image: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&h=500&q=80&auto=format&fit=crop',
       },
     ],
 
     barbers: [                      // ✏️ Edit barber names, specialties, bios
       {
-        id: 'omar-hassan',
-        name: 'Omar Hassan',
-        title: 'Master Barber',
-        specialty: 'Skin Fades & Precision Lines',
+        id: 'blade-amir',
+        name: 'Amir Al Rashid',
+        title: 'Head Fader',
+        specialty: 'Skin Fades & Precision Blending',
         rating: 4.9,
-        reviews: 247,
-        experience: '8 Years',
-        bio: 'Trained in London and Dubai, Omar is renowned for flawless skin fades and sharp line-ups that define the modern gentleman.',
-        initials: 'OH',
+        reviews: 312,
+        experience: '9 Years',
+        bio: "Our lead fading specialist — sought after across Abu Dhabi for his flawless zero-to-skin technique and razor-sharp line-ups.",
+        initials: 'AR',
         image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&q=80&auto=format&fit=crop&face', // ✏️ Replace with real barber photo
       },
       {
-        id: 'khalid-al-rashid',
-        name: 'Khalid Al Rashid',
+        id: 'blade-hassan',
+        name: 'Hassan Malik',
         title: 'Senior Barber',
-        specialty: 'Classic Cuts & Beard Sculpting',
-        rating: 4.8,
-        reviews: 189,
-        experience: '6 Years',
-        bio: 'A master of the classic cut and traditional straight razor shave. Khalid blends old-world technique with modern style.',
-        initials: 'KR',
+        specialty: 'Tapers, Beard Sculpting & Styling',
+        rating: 4.9,
+        reviews: 228,
+        experience: '7 Years',
+        bio: 'Hassan brings old-school craft and modern style together — specialising in textured tapers and immaculate beard grooming.',
+        initials: 'HM',
         image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&q=80&auto=format&fit=crop&face',
       },
       {
-        id: 'james-carter',
-        name: 'James Carter',
-        title: 'Style Specialist',
-        specialty: 'Textured Cuts & Modern Styles',
-        rating: 4.9,
-        reviews: 312,
-        experience: '5 Years',
-        bio: 'James specialises in textured, contemporary cuts for the style-conscious client. Known for his creative approach and attention to detail.',
-        initials: 'JC',
+        id: 'blade-jaylen',
+        name: 'Jaylen Brooks',
+        title: 'Style & Colour Specialist',
+        specialty: 'Braids, Colouring & Creative Cuts',
+        rating: 4.8,
+        reviews: 187,
+        experience: '6 Years',
+        bio: 'The creative force in the shop — from intricate braids to bold colour work, his versatility sets the standard.',
+        initials: 'JB',
         image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&q=80&auto=format&fit=crop&face',
       },
     ],
 
     hours: [                        // ✏️ Edit opening hours
-      { day: 'Monday – Sunday', time: '10:00 AM – 10:00 PM' },
+      { day: 'Monday – Sunday', time: 'Open Daily' },
     ],
 
     testimonials: [                 // ✏️ Edit customer reviews
       {
         id: 1,
-        name: 'Khalid Al-Mansoori',
-        role: 'CEO, Dubai',
-        text: "An unparalleled grooming experience. The attention to detail is extraordinary — I won't go anywhere else.",
+        name: 'Mohammed Al Farsi',
+        role: 'Business Owner, Dubai',
+        text: "Best fade in Dubai — no question. Amir reads your head shape before he even picks up the clippers. Always leave looking immaculate.",
         rating: 5,
         verified: true,
       },
       {
         id: 2,
-        name: 'Ahmed Farouq',
-        role: 'Finance Director',
-        text: 'The VIP package is worth every dirham. The hot towel finish alone is reason enough to return weekly.',
+        name: 'Tariq Hassan',
+        role: 'Finance Professional',
+        text: "The VIP package is a full reset. Hot towel, beard sculpt, premium finish. Worth every dirham — I book every two weeks.",
         rating: 5,
         verified: true,
       },
       {
         id: 3,
-        name: 'Ryan Mitchell',
+        name: 'Luke Williams',
         role: 'Entrepreneur',
-        text: "I've visited barbers in London, New York, and Dubai. The Sovereign is in a different class entirely.",
+        text: "I've been to barbers across London and Abu Dhabi. The Scissors N Razors is in a completely different league. The precision here is unreal.",
         rating: 5,
         verified: true,
       },
       {
         id: 4,
-        name: 'Omar Siddiqui',
-        role: 'Architect',
-        text: "Khalid transformed my beard game completely. The craftsmanship here is something you don't find everywhere.",
+        name: 'Faisal Al Naqbi',
+        role: 'Creative Director',
+        text: "Hassan transformed my beard game. The level of craft here is something you don't find easily — they genuinely care about the result.",
         rating: 5,
         verified: true,
       },
       {
         id: 5,
-        name: 'Daniel Kowalski',
+        name: 'Chris Randall',
         role: 'Marketing Executive',
-        text: 'Booking was effortless, the environment is stunning, and the cut was perfect. This is what luxury looks like.',
+        text: "Booked online, walked in, walked out looking sharp. Seamless experience from start to finish. This is what premium grooming looks like.",
         rating: 5,
         verified: true,
       },
@@ -264,20 +230,21 @@ const profiles = {
     about: {
       headline: 'A Cut Above',
       subheadline: 'More than a barbershop.',
-      body: "The Sovereign is Dubai's premier grooming destination — a sanctuary where master craftsmen transform the everyday into the exceptional. Founded on the principles of precision, luxury, and discretion, we serve the city's most discerning gentlemen.\n\nEvery visit is a ritual. From the moment you arrive, you're treated as royalty. Our barbers are internationally trained, our products are hand-selected, and our standards are uncompromising.",
+      body: "The Scissors N Razors is Abu Dhabi's premier grooming destination — where master barbers deliver precision craftsmanship in an environment built for the modern gentleman. Located on Hamdan Street, every visit is an experience worth returning for.\n\nWith a 4.9 rating across 900+ reviews and a reputation for the sharpest cuts in the city, The Scissors N Razors has become the go-to for Abu Dhabi's style-conscious clientele. Our barbers are specialists — not generalists — and the results speak for themselves.",
       stats: [
-        { value: '8+', label: 'Years of Excellence' },
-        { value: '500+', label: 'Monthly Clients' },
-        { value: '4.9', label: 'Average Rating' },
-        { value: '3', label: 'Master Barbers' },
+        { value: '4.9', label: 'Google Rating' },
+        { value: '900+', label: 'Five-Star Reviews' },
+        { value: '3', label: 'Expert Faders' },
+        { value: 'Daily', label: 'Open 7 Days' },
       ],
     },
 
     booking: {
       headline: 'Reserve Your Session',
-      subheadline: 'Book in under 30 seconds',
+      subheadline: 'Book in seconds',
       urgency: 'Limited slots available — secure your preferred time now',
       confirmationMessage: "Your booking is confirmed! We'll WhatsApp you shortly to confirm your appointment.",
+      freshaUrl: '', // ✏️ Paste your Fresha booking page URL here (e.g. https://www.fresha.com/...)
       availableTimes: [
         '10:00 AM', '11:00 AM', '12:00 PM',
         '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM',
@@ -293,13 +260,13 @@ const profiles = {
 
     gallery: {
       headline: 'The Work',
-      subheadline: 'Craftsmanship in every cut',
+      subheadline: 'Precision in every cut',
       items: [                      // ✏️ Replace image URLs with real client photos
         { id: 1, label: 'Barber at Work', tag: 'Featured', image: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1200&h=800&q=85&auto=format&fit=crop' },
         { id: 2, label: 'Skin Fade', tag: 'After', image: 'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&h=600&q=80&auto=format&fit=crop' },
         { id: 3, label: 'Beard Sculpt', tag: 'After', image: 'https://images.unsplash.com/photo-1567894340315-735d7c361db0?w=800&h=600&q=80&auto=format&fit=crop' },
-        { id: 4, label: 'Clean Fade', tag: 'After', image: 'https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&h=600&q=80&auto=format&fit=crop' },
-        { id: 5, label: 'Precision Cut', tag: 'After', image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&h=600&q=80&auto=format&fit=crop' },
+        { id: 4, label: 'Taper Fade', tag: 'After', image: 'https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&h=600&q=80&auto=format&fit=crop' },
+        { id: 5, label: 'Clean Lines', tag: 'After', image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&h=600&q=80&auto=format&fit=crop' },
         { id: 6, label: 'Shop Atmosphere', tag: 'Lounge', image: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=800&h=600&q=80&auto=format&fit=crop' },
       ],
     },
@@ -321,8 +288,8 @@ const profiles = {
       },
       {
         id: 'full-groom',
-        label: 'Full Grooming Package',
-        description: 'Complete transformation, head to beard.',
+        label: 'VIP Grooming Package',
+        description: 'Complete transformation — cut, beard, and premium finish.',
         before: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=680&q=80&auto=format&fit=crop',
         after: 'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&h=680&q=80&auto=format&fit=crop',
       },

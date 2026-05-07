@@ -39,7 +39,7 @@ ON CONFLICT (id) DO UPDATE SET
   duration = EXCLUDED.duration,
   active   = TRUE;
 
--- Epic Hair Studios services
+-- Epic Hair Studios services (kept for reference / re-use)
 INSERT INTO services (id, name, price, currency, duration) VALUES
   ('epic-standard-cut',   'Standard Haircut',    65,  'AED', '30 min'),
   ('epic-haircut-beard',  'Haircut & Beard',     85,  'AED', '50 min'),
@@ -58,11 +58,33 @@ ON CONFLICT (id) DO UPDATE SET
   duration = EXCLUDED.duration,
   active   = TRUE;
 
+-- Blade Barbers Dubai services
+INSERT INTO services (id, name, price, currency, duration) VALUES
+  ('blade-skin-fade',          'Skin Fade',             145, 'AED', '45 min'),
+  ('blade-skin-fade-beard',    'Skin Fade & Beard',     190, 'AED', '60 min'),
+  ('blade-taper-fade',         'Taper Fade',            135, 'AED', '40 min'),
+  ('blade-taper-fade-beard',   'Taper Fade & Beard',    180, 'AED', '55 min'),
+  ('blade-beard',              'Beard Grooming',         95, 'AED', '30 min'),
+  ('blade-braids',             'Braids & Dreads',       250, 'AED', '90 min'),
+  ('blade-colour',             'Hair Colouring',        200, 'AED', '60 min'),
+  ('blade-vip',                'VIP Grooming Package',  350, 'AED', '90 min')
+ON CONFLICT (id) DO UPDATE SET
+  name     = EXCLUDED.name,
+  price    = EXCLUDED.price,
+  currency = EXCLUDED.currency,
+  duration = EXCLUDED.duration,
+  active   = TRUE;
+
 -- -----------------------------------------------------------------------------
 -- BARBERS  (id matches the slug IDs in src/config/business.js)
 -- -----------------------------------------------------------------------------
 INSERT INTO barbers (id, name, title) VALUES
-  -- Profile: luxuryDubai
+  -- Profile: luxuryDubai (Blade Barbers Dubai)
+  ('blade-amir',         'Amir Al Rashid',     'Head Fader'),
+  ('blade-hassan',       'Hassan Malik',        'Senior Barber'),
+  ('blade-jaylen',       'Jaylen Brooks',       'Style & Colour Specialist'),
+
+  -- Legacy luxuryDubai barbers (kept so old bookings don't orphan)
   ('omar-hassan',        'Omar Hassan',        'Master Barber'),
   ('khalid-al-rashid',   'Khalid Al Rashid',   'Senior Barber'),
   ('james-carter',       'James Carter',       'Style Specialist'),
