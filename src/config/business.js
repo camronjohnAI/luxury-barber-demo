@@ -125,7 +125,7 @@ const profiles = {
         experience: '10 Yrs',
         bio: "Marco's been cutting on Long Island for over a decade. His skin fades are the reason half our regulars made the switch from wherever they were going before.",
         initials: 'MD',
-        image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&q=80&auto=format&fit=crop&face',
+        image: 'https://randomuser.me/api/portraits/men/32.jpg',
       },
       {
         id: 'kevin',
@@ -137,7 +137,7 @@ const profiles = {
         experience: '7 Yrs',
         bio: "Kevin does everything well. He's the one clients bring their dads and sons to — steady hands, no surprises, consistent every single time.",
         initials: 'KW',
-        image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&q=80&auto=format&fit=crop&face',
+        image: 'https://randomuser.me/api/portraits/men/44.jpg',
       },
       {
         id: 'devon',
@@ -149,7 +149,7 @@ const profiles = {
         experience: '5 Yrs',
         bio: "Devon works with texture and pattern. If you want something with a little more edge to it — detailed line work, textured styles, something that takes more thought — he's your guy.",
         initials: 'DB',
-        image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&q=80&auto=format&fit=crop&face',
+        image: 'https://randomuser.me/api/portraits/men/68.jpg',
       },
     ],
 
@@ -809,7 +809,7 @@ export const config = {
     tagline:       client.tagline,
     city:          client.city,
     phone:         client.phone,
-    whatsapp:      client.whatsapp,
+    sms:           client.sms,
     instagram:     client.instagram,
     bookingUrl:    client.bookingUrl,
     address:       client.address,

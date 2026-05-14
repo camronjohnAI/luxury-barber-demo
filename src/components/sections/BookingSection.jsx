@@ -33,10 +33,6 @@ export default function BookingSection() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const waUrl = `https://wa.me/${config.brand.whatsapp}?text=${encodeURIComponent(
-    `Hi, I'd like to book an appointment at ${config.brand.name}. My preferred time is...`
-  )}`
-
   return (
     <section id="booking" className="bg-black py-16 md:py-24 lg:py-32">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

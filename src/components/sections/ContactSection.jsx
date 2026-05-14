@@ -1,20 +1,28 @@
 import { Fragment } from 'react'
 import { motion } from 'framer-motion'
-import { MapPin, Phone, Mail, Clock, MessageCircle, ExternalLink } from 'lucide-react'
+import { MapPin, Phone, Mail, Clock, MessageSquare, ExternalLink } from 'lucide-react'
 import { config } from '../../config/business'
 import SectionHeading from '../ui/SectionHeading'
 
 export default function ContactSection() {
   const { brand, hours } = config
-  const waUrl = `https://wa.me/${brand.whatsapp}?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20booking%20at%20${encodeURIComponent(brand.name)}`
+
+  const handleBook = () => {
+    if (brand.bookingUrl) {
+      window.open(brand.bookingUrl, '_blank', 'noopener,noreferrer')
+    } else {
+      document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
-    <section id="contact" className="bg-charcoal py-16 md:py-24 lg:py-32">
+    <section id="contact" className="bg-charcoal">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Find Us"
-          title="Location & Contact"
-          subtitle="We'd love to see you. Come in, or reach out."
+          title="Location & Hours"
+          subtitle={`We're on Main Street in Huntington — walk-ins welcome, appointments preferred.`}
+          size="md"
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
@@ -66,18 +74,33 @@ export default function ContactSection() {
               )}
             </ul>
 
-            <div className="mt-auto pt-6">
-              <a
-                href={waUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '10px 18px', fontSize: '13px', fontWeight: '600', background: '#25D366', color: '#fff', whiteSpace: 'nowrap', transition: 'opacity 0.2s' }}
-                onMouseOver={e => e.currentTarget.style.opacity = '0.88'}
-                onMouseOut={e => e.currentTarget.style.opacity = '1'}
+            <div className="mt-auto pt-6 flex flex-col gap-3">
+              <button
+                onClick={handleBook}
+                className="gold-gradient text-black text-sm font-semibold px-5 py-3 hover:opacity-90 transition-opacity"
               >
-                <MessageCircle size={15} />
-                Message on WhatsApp
-              </a>
+                Book Appointment
+              </button>
+              {brand.sms && (
+                <a
+                  href={`sms:${brand.sms}`}
+                  className="flex items-center justify-center gap-2 border border-charcoal-border hover:border-gold/50 text-cream text-sm font-medium px-5 py-3 transition-colors duration-200"
+                >
+                  <MessageSquare size={13} className="text-gold" />
+                  Text the Shop
+                </a>
+              )}
+              {brand.instagram && (
+                <a
+                  href={brand.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 text-gold/60 hover:text-gold text-xs font-medium py-2 transition-colors duration-200"
+                >
+                  <ExternalLink size={12} />
+                  View on Instagram
+                </a>
+              )}
             </div>
           </motion.div>
 

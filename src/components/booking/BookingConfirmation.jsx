@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { CheckCircle2, MessageCircle, CalendarCheck, Clock, User, Scissors, Phone } from 'lucide-react'
+import { CheckCircle2, MessageSquare, CalendarCheck, Clock, User, Scissors, Phone } from 'lucide-react'
 import { config } from '../../config/business'
 import Button from '../ui/Button'
 
@@ -15,13 +15,12 @@ export default function BookingConfirmation({ formData, onReset }) {
   const barberLabel = formData.barberName || 'No preference'
   const displayDate = formatDate(formData.date)
 
-  const waMessage = encodeURIComponent(
-    `Hi, I just booked a ${formData.serviceName} at ${config.brand.name} for ${formData.time} on ${displayDate}. ` +
-    `My name is ${formData.customerName}. ` +
-    `Barber preference: ${barberLabel}. ` +
-    `My phone number is ${formData.customerPhone}.`
+  const smsBody = encodeURIComponent(
+    `Hi, I just submitted a booking request at ${config.brand.name}. ` +
+    `${formData.serviceName} at ${formData.time} on ${displayDate}. ` +
+    `Name: ${formData.customerName}. Phone: ${formData.customerPhone}.`
   )
-  const waUrl = `https://wa.me/${config.brand.whatsapp}?text=${waMessage}`
+  const smsUrl = config.brand.sms ? `sms:${config.brand.sms}?body=${smsBody}` : null
 
   return (
     <motion.div
@@ -42,7 +41,7 @@ export default function BookingConfirmation({ formData, onReset }) {
 
       <h3 className="font-heading text-2xl text-cream font-bold mb-2">Booking Received</h3>
       <p className="text-cream-muted text-sm mb-6 max-w-xs mx-auto leading-relaxed">
-        Your appointment request has been received. Tap below to confirm directly with us on WhatsApp.
+        We've got your request. Text us to confirm your slot — your details will be pre-filled.
       </p>
 
       {/* Summary */}
@@ -57,20 +56,24 @@ export default function BookingConfirmation({ formData, onReset }) {
 
       {/* Actions */}
       <div className="flex flex-col sm:flex-row gap-3">
-        <a href={waUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
-          <Button className="w-full gap-2">
-            <MessageCircle size={16} />
-            Confirm on WhatsApp
-          </Button>
-        </a>
+        {smsUrl && (
+          <a href={smsUrl} className="flex-1">
+            <Button className="w-full gap-2">
+              <MessageSquare size={16} />
+              Text to Confirm
+            </Button>
+          </a>
+        )}
         <Button variant="secondary" className="flex-1" onClick={onReset}>
           Book Another
         </Button>
       </div>
 
-      <p className="text-cream-muted/40 text-xs mt-5">
-        Tap "Confirm on WhatsApp" to lock in your slot — your details are pre-filled.
-      </p>
+      {smsUrl && (
+        <p className="text-cream-muted/40 text-xs mt-5">
+          Tap "Text to Confirm" to send us your details — pre-filled and ready to go.
+        </p>
+      )}
     </motion.div>
   )
 }

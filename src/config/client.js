@@ -15,8 +15,8 @@ export const client = {
   city:          'Long Island',       // used in hero eyebrow
 
   // ── Contact ───────────────────────────────────────────────
-  phone:      '+1 (631) 555-0182',
-  whatsapp:   '16315550182',          // digits only, no + or spaces
+  phone:      '+1 (516) 123-4567',
+  sms:        '+15161234567',          // number used for sms: links (usually same as phone)
   instagram:  '',                      // full URL: https://instagram.com/yourshop
   bookingUrl: '',                      // Fresha / Square / Booksy etc.
                                        // if set, CTAs link here instead of the on-page form
@@ -28,7 +28,7 @@ export const client = {
   // ── Assets ────────────────────────────────────────────────
   // Drop files in the /public folder, then set filenames here.
   logo:      '',                       // e.g. 'logo.png' — blank = text wordmark
-  heroImage: 'barberhero.png',         // hero background photo
+  heroImage: 'barberhero.png',          // hero background photo
 
   // ── Hours ─────────────────────────────────────────────────
   hours: [

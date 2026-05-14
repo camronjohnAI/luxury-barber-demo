@@ -45,11 +45,11 @@ export default function HeroSection() {
         style={{ willChange: 'transform' }}
       />
 
-      {/* Bottom-up gradient */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/65 to-black/15" />
+      {/* Bottom-up gradient — heavy at base for text legibility, fades to almost nothing at top */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
 
-      {/* Left-side gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+      {/* Left-side gradient — anchors the text block without blacking out the photo */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/20 to-transparent" />
 
       {/* Gold hairline at top */}
       <div className="absolute top-0 left-0 right-0 h-px gold-gradient opacity-50" />

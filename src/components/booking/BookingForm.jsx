@@ -110,7 +110,7 @@ export default function BookingForm({ formData, updateField, onSubmit, status, e
       </Field>
 
       {/* Phone */}
-      <Field label="Phone / WhatsApp" required>
+      <Field label="Phone Number" required>
         <input
           type="tel"
           value={formData.customerPhone}
