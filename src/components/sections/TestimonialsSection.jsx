@@ -41,23 +41,16 @@ export default function TestimonialsSection() {
     <section id="testimonials" className="bg-charcoal py-16 md:py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="Client Reviews"
-          title="What They Say"
-          subtitle="Don't take our word for it."
+          eyebrow="Real Reviews"
+          title="What People Are Saying"
+          size="md"
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-          {testimonials.slice(0, 3).map((review, i) => (
+          {testimonials.map((review, i) => (
             <TestimonialCard key={review.id} review={review} index={i} />
           ))}
         </div>
-        {testimonials.length > 3 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 items-stretch max-w-2xl mx-auto lg:max-w-none lg:grid-cols-2 lg:px-[calc(100%/6)]">
-            {testimonials.slice(3).map((review, i) => (
-              <TestimonialCard key={review.id} review={review} index={i + 3} />
-            ))}
-          </div>
-        )}
 
         {/* CTA */}
         <motion.div
@@ -71,7 +64,7 @@ export default function TestimonialsSection() {
             onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
             className="gold-gradient text-black font-semibold px-8 py-4 text-base tracking-wide hover:opacity-90 transition-opacity"
           >
-            Join Our Happy Clients
+            Book Your Cut
           </button>
         </motion.div>
       </div>

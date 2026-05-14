@@ -1,122 +1,143 @@
 import { motion } from 'framer-motion'
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown, Calendar, Scissors } from 'lucide-react'
 import { config } from '../../config/business'
 import Button from '../ui/Button'
-import TrustBadge from '../ui/TrustBadge'
+
+// Expo-out bezier — fast start, smooth settle. More premium than ease-out.
+const EXPO_OUT = [0.22, 1, 0.36, 1]
 
 const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 30 },
+  initial: { opacity: 0, y: 22 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.7, delay, ease: [0.25, 0.1, 0.25, 1] },
+  transition: { duration: 0.85, delay, ease: EXPO_OUT },
 })
+
+const buttonHover = {
+  whileHover: { y: -2 },
+  whileTap: { scale: 0.97 },
+  transition: { duration: 0.15, ease: 'easeOut' },
+}
+
+function handleBookingCta(bookingUrl) {
+  if (bookingUrl) {
+    window.open(bookingUrl, '_blank', 'noopener,noreferrer')
+  } else {
+    document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
+  }
+}
 
 export default function HeroSection() {
   const { hero, brand } = config
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-black">
-      {/* Background texture */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `repeating-linear-gradient(
-            45deg,
-            var(--accent) 0px,
-            var(--accent) 1px,
-            transparent 1px,
-            transparent 60px
-          )`,
-        }}
+    <section className="relative min-h-screen flex items-end overflow-hidden">
+      {/* Hero photo — slow Ken Burns zoom on mount */}
+      <motion.img
+        src={`/${hero.image}`}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover object-center"
+        loading="eager"
+        fetchpriority="high"
+        initial={{ scale: 1.08 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 14, ease: 'easeOut' }}
+        style={{ willChange: 'transform' }}
       />
 
-      {/* Radial glow */}
-      <div className="absolute inset-0 bg-radial-[ellipse_80%_50%_at_50%_60%] from-[rgba(201,168,76,0.06)] to-transparent pointer-events-none" />
+      {/* Bottom-up gradient */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/65 to-black/15" />
 
-      {/* Gold line top */}
-      <div className="absolute top-0 left-0 right-0 h-px gold-gradient opacity-60" />
+      {/* Left-side gradient */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 pb-16">
-        {/* Trust Badges */}
-        <motion.div
-          {...fadeUp(0.1)}
-          className="flex flex-wrap justify-center gap-2 mb-10"
-        >
-          {hero.trustBadges.map((badge) => (
-            <TrustBadge key={badge.label} icon={badge.icon} label={badge.label} />
-          ))}
-        </motion.div>
+      {/* Gold hairline at top */}
+      <div className="absolute top-0 left-0 right-0 h-px gold-gradient opacity-50" />
 
+      {/* Content */}
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 sm:px-10 lg:px-16 pb-24 pt-40">
         {/* Eyebrow */}
         <motion.p
-          {...fadeUp(0.2)}
-          className="text-gold text-xs font-semibold tracking-[0.25em] uppercase mb-6"
+          {...fadeUp(0.1)}
+          className="text-gold text-[0.65rem] font-semibold tracking-[0.32em] uppercase mb-5"
         >
-          {brand.city} Premium Barbershop
+          {brand.city} Barbershop
         </motion.p>
 
         {/* Headline */}
         <motion.h1
-          {...fadeUp(0.3)}
-          className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.05] mb-6 text-cream"
+          {...fadeUp(0.25)}
+          className="font-heading font-bold leading-[1.06] mb-7 text-white"
+          style={{ fontSize: 'clamp(2.8rem, 7vw, 5.5rem)' }}
         >
-          {hero.headline}{' '}
-          <span className="gold-text">{hero.headlineAccent}</span>{' '}
-          {hero.headlineEnd}
+          {hero.headline} {hero.headlineAccent}
+          <br />
+          <span className="gold-text">{hero.headlineEnd}</span>
         </motion.h1>
 
         {/* Subheadline */}
         <motion.p
-          {...fadeUp(0.45)}
-          className="text-cream-muted text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10"
+          {...fadeUp(0.42)}
+          className="text-white/60 text-base md:text-lg max-w-lg leading-relaxed mb-10"
         >
           {hero.subheadline}
         </motion.p>
 
-        {/* CTA Buttons */}
+        {/* CTAs */}
         <motion.div
-          {...fadeUp(0.55)}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6"
+          {...fadeUp(0.56)}
+          className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4"
         >
-          <Button
-            size="lg"
-            className="w-full sm:w-auto min-w-[200px]"
-            onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            {hero.cta}
-          </Button>
-          <Button
-            variant="secondary"
-            size="lg"
-            className="w-full sm:w-auto min-w-[200px]"
-            onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            {hero.ctaSecondary}
-          </Button>
+          <motion.div {...buttonHover}>
+            <Button
+              size="lg"
+              className="w-full sm:w-auto sm:min-w-[210px]"
+              onClick={() => handleBookingCta(brand.bookingUrl)}
+            >
+              <Calendar size={16} />
+              {hero.cta}
+            </Button>
+          </motion.div>
+
+          <motion.div {...buttonHover}>
+            <Button
+              variant="secondary"
+              size="lg"
+              className="w-full sm:w-auto sm:min-w-[210px]"
+              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              <Scissors size={16} />
+              {hero.ctaSecondary}
+            </Button>
+          </motion.div>
         </motion.div>
 
         {/* Urgency */}
-        <motion.p
-          {...fadeUp(0.65)}
-          className="text-gold text-sm font-medium italic"
+        <motion.div
+          {...fadeUp(0.68)}
+          className="flex items-center gap-3 mt-8"
         >
-          ⚡ {hero.urgency}
-        </motion.p>
+          <div className="w-6 h-px bg-gold/50" />
+          <p className="text-gold/60 text-[0.7rem] font-medium tracking-[0.18em] uppercase">
+            {hero.urgency}
+          </p>
+        </motion.div>
       </div>
 
-      {/* Gold divider line at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-px gold-gradient opacity-40" />
-
-      {/* Scroll indicator */}
+      {/* Scroll cue */}
       <motion.button
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
+        transition={{ delay: 1.6, duration: 0.6 }}
         onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gold/40 hover:text-gold transition-colors"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gold/40 hover:text-gold transition-colors duration-300"
         aria-label="Scroll down"
       >
-        <motion.div animate={{ y: [0, 6, 0] }} transition={{ repeat: Infinity, duration: 2 }}>
-          <ChevronDown size={28} />
+        <motion.div
+          animate={{ y: [0, 4, 0] }}
+          transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
+        >
+          <ChevronDown size={26} />
         </motion.div>
       </motion.button>
     </section>

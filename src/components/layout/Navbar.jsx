@@ -31,12 +31,19 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center group">
-            <img
-              src="/scissor-razor-logo.webp"
-              alt={config.brand.name}
-              className="h-12 md:h-16 w-auto object-contain"
-            />
+          <a href="#" className="flex flex-col leading-none group" aria-label={config.brand.name}>
+            {config.brand.logo ? (
+              <img src={`/${config.brand.logo}`} alt={config.brand.name} className="h-8 w-auto" />
+            ) : (
+              <>
+                <span className="font-heading text-lg md:text-xl font-bold tracking-[0.1em] text-white uppercase group-hover:text-gold transition-colors duration-200">
+                  {config.brand.wordmarkLine1}
+                </span>
+                <span className="text-[0.55rem] tracking-[0.38em] text-gold uppercase font-semibold mt-0.5">
+                  {config.brand.wordmarkLine2}
+                </span>
+              </>
+            )}
           </a>
 
           {/* Desktop Nav */}
@@ -54,7 +61,13 @@ export default function Navbar() {
 
           {/* Desktop CTA */}
           <div className="hidden md:block">
-            <Button size="sm" onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}>
+            <Button size="sm" onClick={() => {
+              if (config.brand.bookingUrl) {
+                window.open(config.brand.bookingUrl, '_blank', 'noopener,noreferrer')
+              } else {
+                document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
+              }
+            }}>
               Book Now
             </Button>
           </div>
@@ -95,7 +108,11 @@ export default function Navbar() {
                 className="mt-2 w-full"
                 onClick={() => {
                   setMenuOpen(false)
-                  document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
+                  if (config.brand.bookingUrl) {
+                    window.open(config.brand.bookingUrl, '_blank', 'noopener,noreferrer')
+                  } else {
+                    document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
+                  }
                 }}
               >
                 Book Now

@@ -16,9 +16,10 @@ export default function AvailableSlotsSection() {
     <section id="availability" className="bg-charcoal py-16 md:py-24 lg:py-32">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="Today's Schedule"
-          title="Available Now"
-          subtitle="Reserve your preferred slot before it's gone."
+          eyebrow="Today's Openings"
+          title="Open Slots"
+          subtitle="Tap a time to pre-fill your booking form."
+          size="md"
         />
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

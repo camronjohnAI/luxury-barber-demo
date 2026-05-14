@@ -1,11 +1,10 @@
 // =============================================================================
 // LUXURY BARBER DEMO — MASTER BUSINESS CONFIG
 // =============================================================================
-// HOW TO PERSONALIZE FOR A NEW BARBERSHOP IN 5 MINUTES:
-// 1. Change ACTIVE_PROFILE below to one of: 'luxuryDubai' | 'modernNeighborhood' | 'premiumGroomingLounge'
-// 2. OR duplicate a profile below and fill in the real shop's details
-// 3. Every page/section pulls from this file — nothing is hardcoded anywhere else
+// To personalize for a client, edit src/config/client.js — that's the only
+// file you need to touch. This file holds demo profiles and static copy.
 // =============================================================================
+import { client } from './client.js'
 
 // ✏️  CHANGE THIS ONE LINE TO SWITCH BETWEEN SHOP PROFILES
 export const ACTIVE_PROFILE = 'luxuryDubai'
@@ -13,25 +12,25 @@ export const ACTIVE_PROFILE = 'luxuryDubai'
 const profiles = {
 
   // ===========================================================================
-  // PROFILE 1: BLADE BARBERS DUBAI
+  // PROFILE 1: NORTH SHORE BARBER CO. — LONG ISLAND
   // ===========================================================================
   luxuryDubai: {
     brand: {
-      name: 'The Scissors N Razors',                  // ✏️ Shop name
-      tagline: 'Precision Cuts. Premium Grooming.',   // ✏️ Tagline
-      subTagline: 'Sharp fades, clean styling, premium service.', // ✏️ Sub-tagline
-      phone: '+971 55 495 5755',                      // ✏️ Phone number (display)
-      whatsapp: '971554955755',                       // ✏️ Primary WhatsApp (no + or spaces)
-      whatsapp2: '971568687084',                      // ✏️ Secondary WhatsApp (no + or spaces)
-      email: '',                                      // ✏️ Email
-      address: 'Al Sari Building, near Meat Mart, behind Lulu Xpress, Hamdan Street, Abu Dhabi', // ✏️ Address
-      city: 'Abu Dhabi',
-      mapsUrl: 'https://maps.google.com/?q=Al+Sari+Building+Hamdan+Street+Abu+Dhabi+UAE', // ✏️ Google Maps link
-      mapEmbedUrl: '',                                // ✏️ Paste Google Maps embed URL here
-      instagram: '',                                  // ✏️ Instagram URL
-      website: 'https://thescissorsnrazors.com/',    // ✏️ Website URL
+      name: 'North Shore Barber Co.',               // ✏️ Shop name
+      tagline: 'Sharp Cuts. Clean Fades.',          // ✏️ Tagline
+      subTagline: 'Long Island\'s Premier Barbershop.', // ✏️ Sub-tagline
+      phone: '+1 (631) 555-0182',                   // ✏️ Phone number (display)
+      whatsapp: '16315550182',                      // ✏️ Primary WhatsApp (no + or spaces)
+      whatsapp2: '',                                // ✏️ Secondary WhatsApp
+      email: '',                                    // ✏️ Email
+      address: '142 Main Street, Huntington, NY 11743', // ✏️ Address
+      city: 'Long Island',
+      mapsUrl: 'https://maps.google.com/?q=142+Main+Street+Huntington+NY+11743',
+      mapEmbedUrl: '',                              // ✏️ Paste Google Maps embed URL here
+      instagram: '',                                // ✏️ Instagram URL
+      website: '',                                  // ✏️ Website URL
       tiktok: '',
-      logo: '/scissor-razor-logo.webp',              // ✏️ Place logo in /public and update filename
+      logo: '',                                     // ✏️ Place logo in /public and update filename
     },
 
     colors: {
@@ -43,231 +42,206 @@ const profiles = {
     },
 
     hero: {
-      headline: 'Sharp.',           // ✏️ First word of headline
-      headlineAccent: 'Fades.',     // ✏️ Accent word
-      headlineEnd: 'Style.',         // ✏️ Last word of headline
-      subheadline: "Abu Dhabi's premier grooming destination — precision-crafted for the modern gentleman.",
-      cta: 'Book Your Appointment',
+      headline: 'Sharp Cuts.',
+      headlineAccent: 'Clean Fades.',
+      headlineEnd: 'Long Island Standard.',
+      subheadline: 'Premium fades, expert beard work, and precision grooming — for men who take pride in the details.',
+      cta: 'Book Appointment',
       ctaSecondary: 'View Services',
-      urgency: 'Limited slots available today',
+      urgency: 'Limited slots available — book your chair today',
       trustBadges: [
         { icon: 'Award', label: '4.9 Google Rating' },
         { icon: 'Star', label: '900+ Reviews' },
         { icon: 'Scissors', label: 'Expert Faders' },
-        { icon: 'Shield', label: 'Premium Experience' },
+        { icon: 'Shield', label: 'Long Island Owned' },
       ],
     },
 
-    services: [                     // ✏️ Edit service names, prices, descriptions
+    services: [
       {
-        id: 'blade-skin-fade',
-        name: 'Skin Fade',
-        price: 145,
-        currency: 'AED',
+        id: 'signature-haircut',
+        name: 'Signature Haircut',
+        price: 42,
+        currency: '$',
         duration: '45 min',
-        description: 'Our signature zero-to-skin fade — seamlessly blended, razor-sharp, and finished to perfection.',
+        description: 'Scissor cut shaped to your style and your head. Clean, adaptable, and consistent every time you sit down.',
+        popular: false,
+      },
+      {
+        id: 'skin-fade',
+        name: 'Skin Fade',
+        price: 45,
+        currency: '$',
+        duration: '45 min',
+        description: 'Zero-to-skin fade, blended seamless. The cut most of our regulars come back for every two to three weeks.',
         popular: true,
-        image: 'https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&h=500&q=80&auto=format&fit=crop',
       },
       {
-        id: 'blade-skin-fade-beard',
-        name: 'Skin Fade & Beard',
-        price: 190,
-        currency: 'AED',
+        id: 'beard-trim-lineup',
+        name: 'Beard Trim & Lineup',
+        price: 30,
+        currency: '$',
+        duration: '25 min',
+        description: 'Trim, shape, and a straight-razor line-up. We work with what you\'ve got — nothing overdone.',
+        popular: false,
+      },
+      {
+        id: 'haircut-beard',
+        name: 'Haircut + Beard',
+        price: 65,
+        currency: '$',
         duration: '60 min',
-        description: 'The full package — a flawless skin fade paired with expert beard shaping and a clean line-up.',
+        description: 'Cut and beard done together, finished sharp. Walk in, walk out looking put together.',
         popular: true,
-        image: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&h=500&q=80&auto=format&fit=crop',
       },
       {
-        id: 'blade-taper-fade',
-        name: 'Taper Fade',
-        price: 135,
-        currency: 'AED',
-        duration: '40 min',
-        description: 'A clean, graduated taper fade that works with any hair type or length — timeless and versatile.',
+        id: 'kids-cut',
+        name: "Kids' Cut",
+        price: 28,
+        currency: '$',
+        duration: '25 min',
+        description: 'Clean cuts for 12 and under. Patient barbers, relaxed pace, good results every time.',
         popular: false,
-        image: 'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&h=500&q=80&auto=format&fit=crop',
       },
       {
-        id: 'blade-taper-fade-beard',
-        name: 'Taper Fade & Beard',
-        price: 180,
-        currency: 'AED',
-        duration: '55 min',
-        description: 'Premium taper fade with precision beard sculpting — sharp lines, clean finish, complete look.',
+        id: 'hot-towel-shave',
+        name: 'Hot Towel Shave',
+        price: 45,
+        currency: '$',
+        duration: '35 min',
+        description: 'Straight razor, hot towel prep, and a smooth finish. Done the right way, not the fast way.',
         popular: false,
-        image: 'https://images.unsplash.com/photo-1567894340315-735d7c361db0?w=800&h=500&q=80&auto=format&fit=crop',
-      },
-      {
-        id: 'blade-beard',
-        name: 'Beard Grooming',
-        price: 95,
-        currency: 'AED',
-        duration: '30 min',
-        description: 'Expert beard trim, shaping, and straight razor line-up. Define your look with precision.',
-        popular: false,
-        image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&h=500&q=80&auto=format&fit=crop',
-      },
-      {
-        id: 'blade-braids',
-        name: 'Braids & Dreads',
-        price: 250,
-        currency: 'AED',
-        duration: '90 min',
-        description: 'Expertly crafted braids, cornrows, and dread styling with clean, defined, lasting results.',
-        popular: false,
-        image: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=800&h=500&q=80&auto=format&fit=crop',
-      },
-      {
-        id: 'blade-colour',
-        name: 'Hair Colouring',
-        price: 200,
-        currency: 'AED',
-        duration: '60 min',
-        description: 'Professional hair colouring, highlights, and treatments — bold or subtle, always precise.',
-        popular: false,
-        image: 'https://images.unsplash.com/photo-1534297635766-a262cdcb8ee4?w=800&h=500&q=80&auto=format&fit=crop',
-      },
-      {
-        id: 'blade-vip',
-        name: 'VIP Grooming Package',
-        price: 350,
-        currency: 'AED',
-        duration: '90 min',
-        description: 'The ultimate grooming experience — premium cut, beard sculpt, hot towel treatment, and finishing.',
-        popular: false,
-        image: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&h=500&q=80&auto=format&fit=crop',
       },
     ],
 
-    barbers: [                      // ✏️ Edit barber names, specialties, bios
+    barbers: [
       {
-        id: 'blade-amir',
-        name: 'Amir Al Rashid',
-        title: 'Head Fader',
+        id: 'marco',
+        name: 'Marco DeLuca',
+        title: 'Head Barber',
         specialty: 'Skin Fades & Precision Blending',
         rating: 4.9,
-        reviews: 312,
-        experience: '9 Years',
-        bio: "Our lead fading specialist — sought after across Abu Dhabi for his flawless zero-to-skin technique and razor-sharp line-ups.",
-        initials: 'AR',
-        image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&q=80&auto=format&fit=crop&face', // ✏️ Replace with real barber photo
+        reviews: 287,
+        experience: '10 Yrs',
+        bio: "Marco's been cutting on Long Island for over a decade. His skin fades are the reason half our regulars made the switch from wherever they were going before.",
+        initials: 'MD',
+        image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&q=80&auto=format&fit=crop&face',
       },
       {
-        id: 'blade-hassan',
-        name: 'Hassan Malik',
+        id: 'kevin',
+        name: 'Kevin Wright',
         title: 'Senior Barber',
-        specialty: 'Tapers, Beard Sculpting & Styling',
+        specialty: 'Classic Cuts & Beard Work',
         rating: 4.9,
-        reviews: 228,
-        experience: '7 Years',
-        bio: 'Hassan brings old-school craft and modern style together — specialising in textured tapers and immaculate beard grooming.',
-        initials: 'HM',
+        reviews: 214,
+        experience: '7 Yrs',
+        bio: "Kevin does everything well. He's the one clients bring their dads and sons to — steady hands, no surprises, consistent every single time.",
+        initials: 'KW',
         image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&q=80&auto=format&fit=crop&face',
       },
       {
-        id: 'blade-jaylen',
-        name: 'Jaylen Brooks',
-        title: 'Style & Colour Specialist',
-        specialty: 'Braids, Colouring & Creative Cuts',
+        id: 'devon',
+        name: 'Devon Brooks',
+        title: 'Style Barber',
+        specialty: 'Textured Hair, Designs & Braids',
         rating: 4.8,
-        reviews: 187,
-        experience: '6 Years',
-        bio: 'The creative force in the shop — from intricate braids to bold colour work, his versatility sets the standard.',
-        initials: 'JB',
+        reviews: 163,
+        experience: '5 Yrs',
+        bio: "Devon works with texture and pattern. If you want something with a little more edge to it — detailed line work, textured styles, something that takes more thought — he's your guy.",
+        initials: 'DB',
         image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&q=80&auto=format&fit=crop&face',
       },
     ],
 
-    hours: [                        // ✏️ Edit opening hours
-      { day: 'Monday – Sunday', time: 'Open Daily' },
+    hours: [
+      { day: 'Mon – Fri', time: '10:00 AM – 8:00 PM' },
+      { day: 'Saturday', time: '9:00 AM – 7:00 PM' },
+      { day: 'Sunday', time: '10:00 AM – 5:00 PM' },
     ],
 
-    testimonials: [                 // ✏️ Edit customer reviews
+    testimonials: [
       {
         id: 1,
-        name: 'Mohammed Al Farsi',
-        role: 'Business Owner, Dubai',
-        text: "Best fade in Dubai — no question. Amir reads your head shape before he even picks up the clippers. Always leave looking immaculate.",
+        name: 'Ryan M.',
+        role: 'Huntington, NY',
+        text: "Marco's been cutting my hair for three years. I've tried other spots here and there. Always come back. Best fade on Long Island, no contest.",
         rating: 5,
         verified: true,
       },
       {
         id: 2,
-        name: 'Tariq Hassan',
-        role: 'Finance Professional',
-        text: "The VIP package is a full reset. Hot towel, beard sculpt, premium finish. Worth every dirham — I book every two weeks.",
+        name: 'Tom K.',
+        role: 'Smithtown, NY',
+        text: "Kevin shaped my beard before my wedding. My wife couldn't stop complimenting it. I've been a regular ever since. Booked every three weeks without fail.",
         rating: 5,
         verified: true,
       },
       {
         id: 3,
-        name: 'Luke Williams',
-        role: 'Entrepreneur',
-        text: "I've been to barbers across London and Abu Dhabi. The Scissors N Razors is in a completely different league. The precision here is unreal.",
+        name: 'Chris D.',
+        role: 'Melville, NY',
+        text: "Walked in for a simple cleanup. Devon shaped my fade better than any shop I'd been to in years. This place is the real deal.",
         rating: 5,
         verified: true,
       },
       {
         id: 4,
-        name: 'Faisal Al Naqbi',
-        role: 'Creative Director',
-        text: "Hassan transformed my beard game. The level of craft here is something you don't find easily — they genuinely care about the result.",
+        name: 'Anthony R.',
+        role: 'Stony Brook, NY',
+        text: "Booked online on a Friday morning, got the 11am Saturday slot, was done by noon. Clean cut, easy process, fair price. Exactly what I needed.",
         rating: 5,
         verified: true,
       },
       {
         id: 5,
-        name: 'Chris Randall',
-        role: 'Marketing Executive',
-        text: "Booked online, walked in, walked out looking sharp. Seamless experience from start to finish. This is what premium grooming looks like.",
+        name: 'James P.',
+        role: 'Huntington, NY',
+        text: "The Full Works is worth every dollar. Hot towel at the end is the move. I've been going every three weeks since I found this place.",
         rating: 5,
         verified: true,
       },
     ],
 
     about: {
-      headline: 'A Cut Above',
-      subheadline: 'More than a barbershop.',
-      body: "The Scissors N Razors is Abu Dhabi's premier grooming destination — where master barbers deliver precision craftsmanship in an environment built for the modern gentleman. Located on Hamdan Street, every visit is an experience worth returning for.\n\nWith a 4.9 rating across 900+ reviews and a reputation for the sharpest cuts in the city, The Scissors N Razors has become the go-to for Abu Dhabi's style-conscious clientele. Our barbers are specialists — not generalists — and the results speak for themselves.",
+      headline: 'We Know This Town',
+      subheadline: "Huntington's spot for serious cuts.",
+      body: "North Shore Barber Co. has been cutting hair on Main Street since day one. No gimmicks, no attitude — just three barbers who know their craft and take pride in every head that sits in the chair.\n\nWe keep the shop tight, the schedule on time, and the cuts clean. 900+ five-star reviews from real people in the community. That's not a marketing number — that's what happens when you do the work right.",
       stats: [
-        { value: '4.9', label: 'Google Rating' },
         { value: '900+', label: 'Five-Star Reviews' },
-        { value: '3', label: 'Expert Faders' },
-        { value: 'Daily', label: 'Open 7 Days' },
+        { value: '4.9', label: 'Google Rating' },
+        { value: '10+', label: 'Years on Long Island' },
+        { value: '3', label: 'Barbers on the Floor' },
       ],
     },
 
     booking: {
-      headline: 'Reserve Your Session',
-      subheadline: 'Book in seconds',
-      urgency: 'Limited slots available — secure your preferred time now',
-      confirmationMessage: "Your booking is confirmed! We'll WhatsApp you shortly to confirm your appointment.",
-      freshaUrl: '', // ✏️ Paste your Fresha booking page URL here (e.g. https://www.fresha.com/...)
+      headline: 'Grab Your Slot',
+      subheadline: 'Takes less than a minute',
+      urgency: 'Weekend slots go fast — grab yours now',
+      confirmationMessage: "You're booked. We'll see you at your appointment.",
+      freshaUrl: '',
       availableTimes: [
         '10:00 AM', '11:00 AM', '12:00 PM',
         '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM',
-        '5:00 PM', '6:00 PM', '7:00 PM', '8:00 PM', '9:00 PM',
+        '5:00 PM', '6:00 PM', '7:00 PM',
       ],
       todaySlots: [
         { time: '11:00 AM', label: 'Morning' },
         { time: '2:00 PM', label: 'Afternoon' },
         { time: '5:00 PM', label: 'Evening' },
-        { time: '8:00 PM', label: 'Late Evening' },
       ],
     },
 
     gallery: {
       headline: 'The Work',
-      subheadline: 'Precision in every cut',
-      items: [                      // ✏️ Replace image URLs with real client photos
-        { id: 1, label: 'Barber at Work', tag: 'Featured', image: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1200&h=800&q=85&auto=format&fit=crop' },
+      subheadline: 'Come in looking good. Leave looking better.',
+      items: [
+        { id: 1, label: 'Barber at Work', tag: 'In Shop', image: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1200&h=800&q=85&auto=format&fit=crop' },
         { id: 2, label: 'Skin Fade', tag: 'After', image: 'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&h=600&q=80&auto=format&fit=crop' },
         { id: 3, label: 'Beard Sculpt', tag: 'After', image: 'https://images.unsplash.com/photo-1567894340315-735d7c361db0?w=800&h=600&q=80&auto=format&fit=crop' },
         { id: 4, label: 'Taper Fade', tag: 'After', image: 'https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&h=600&q=80&auto=format&fit=crop' },
         { id: 5, label: 'Clean Lines', tag: 'After', image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&h=600&q=80&auto=format&fit=crop' },
-        { id: 6, label: 'Shop Atmosphere', tag: 'Lounge', image: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=800&h=600&q=80&auto=format&fit=crop' },
+        { id: 6, label: 'The Shop', tag: 'In Shop', image: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=800&h=600&q=80&auto=format&fit=crop' },
       ],
     },
 
@@ -281,15 +255,15 @@ const profiles = {
       },
       {
         id: 'beard-lineup',
-        label: 'Beard Line Up',
+        label: 'Beard Line-Up',
         description: 'Precision shaping that defines the jaw.',
         before: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&h=680&q=80&auto=format&fit=crop',
         after: 'https://images.unsplash.com/photo-1567894340315-735d7c361db0?w=800&h=680&q=80&auto=format&fit=crop',
       },
       {
-        id: 'full-groom',
-        label: 'VIP Grooming Package',
-        description: 'Complete transformation — cut, beard, and premium finish.',
+        id: 'full-works',
+        label: 'Full Works',
+        description: 'Cut and beard done together. The complete reset.',
         before: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=680&q=80&auto=format&fit=crop',
         after: 'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&h=680&q=80&auto=format&fit=crop',
       },
@@ -821,4 +795,31 @@ const profiles = {
   },
 }
 
-export const config = profiles[ACTIVE_PROFILE]
+const _profile = profiles[ACTIVE_PROFILE]
+
+// Client fields from client.js override the active profile.
+// Everything else (copy, testimonials, barbers, gallery) comes from the profile.
+export const config = {
+  ..._profile,
+  brand: {
+    ..._profile.brand,
+    name:          client.name,
+    wordmarkLine1: client.wordmarkLine1,
+    wordmarkLine2: client.wordmarkLine2,
+    tagline:       client.tagline,
+    city:          client.city,
+    phone:         client.phone,
+    whatsapp:      client.whatsapp,
+    instagram:     client.instagram,
+    bookingUrl:    client.bookingUrl,
+    address:       client.address,
+    mapsUrl:       client.mapsUrl,
+    logo:          client.logo,
+  },
+  hours:    client.hours,
+  services: client.services,
+  hero: {
+    ..._profile.hero,
+    image: client.heroImage,
+  },
+}

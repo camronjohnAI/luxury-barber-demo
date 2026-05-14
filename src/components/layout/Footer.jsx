@@ -10,13 +10,20 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           {/* Brand */}
           <div>
-            <div className="mb-4">
-              <img
-                src="/scissor-razor-logo.webp"
-                alt={config.brand.name}
-                className="h-12 md:h-16 w-auto object-contain"
-              />
-            </div>
+            <a href="#" className="flex flex-col leading-none mb-4">
+              {config.brand.logo ? (
+                <img src={`/${config.brand.logo}`} alt={config.brand.name} className="h-8 w-auto" />
+              ) : (
+                <>
+                  <span className="font-heading text-lg font-bold tracking-[0.1em] text-white uppercase">
+                    {config.brand.wordmarkLine1}
+                  </span>
+                  <span className="text-[0.55rem] tracking-[0.38em] text-gold uppercase font-semibold mt-0.5">
+                    {config.brand.wordmarkLine2}
+                  </span>
+                </>
+              )}
+            </a>
             <p className="text-cream-muted text-sm leading-relaxed">{config.brand.tagline}</p>
             {config.brand.instagram && (
               <a
@@ -67,7 +74,7 @@ export default function Footer() {
             © {year} {config.brand.name}. All rights reserved.
           </p>
           <p className="text-charcoal-border text-xs">
-            Premium Grooming Demo — Built with Claude Code
+            {config.brand.address}
           </p>
         </div>
       </div>

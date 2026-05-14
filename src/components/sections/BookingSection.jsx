@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Shield, Clock, Star, Zap, MessageCircle } from 'lucide-react'
+import { Shield, Clock, Star, Zap } from 'lucide-react'
 import { config } from '../../config/business'
 import { useBooking } from '../../hooks/useBooking'
 import BookingForm from '../booking/BookingForm'
@@ -10,7 +10,7 @@ import SectionHeading from '../ui/SectionHeading'
 const trustPoints = [
   { icon: Shield, text: 'No deposit required' },
   { icon: Clock, text: 'Book in under 30 seconds' },
-  { icon: Star, text: 'Trusted by 500+ clients' },
+  { icon: Star, text: '900+ five-star reviews' },
   { icon: Zap, text: 'Instant confirmation' },
 ]
 
@@ -41,9 +41,10 @@ export default function BookingSection() {
     <section id="booking" className="bg-black py-16 md:py-24 lg:py-32">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="Reserve Your Slot"
+          eyebrow="Book Online"
           title={config.booking.headline}
           subtitle={config.booking.subheadline}
+          size="md"
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
@@ -125,28 +126,18 @@ export default function BookingSection() {
           </motion.div>
         </div>
 
-        {/* WhatsApp backup CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-8 luxury-card bg-charcoal border border-charcoal-border flex flex-col sm:flex-row items-center justify-between gap-5"
+          className="text-center text-cream-muted text-sm mt-6"
         >
-          <div>
-            <p className="text-cream font-semibold mb-1">Prefer WhatsApp?</p>
-            <p className="text-cream-muted text-sm">Send your preferred time instantly and we'll confirm right away.</p>
-          </div>
-          <a
-            href={waUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-[#25D366] text-white font-semibold px-6 py-3 text-sm hover:opacity-90 transition-opacity shrink-0 whitespace-nowrap"
-          >
-            <MessageCircle size={16} />
-            Book on WhatsApp
+          Prefer to call?{' '}
+          <a href={`tel:${config.brand.phone}`} className="text-gold hover:text-gold-light transition-colors">
+            {config.brand.phone}
           </a>
-        </motion.div>
+        </motion.p>
       </div>
     </section>
   )

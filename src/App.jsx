@@ -6,6 +6,7 @@ import BookingSection from './components/sections/BookingSection'
 import TeamSection from './components/sections/TeamSection'
 import GallerySection from './components/sections/GallerySection'
 import TransformationsSection from './components/sections/TransformationsSection'
+import ExperienceSection from './components/sections/ExperienceSection'
 import TestimonialsSection from './components/sections/TestimonialsSection'
 import AboutSection from './components/sections/AboutSection'
 import ContactSection from './components/sections/ContactSection'
@@ -15,13 +16,14 @@ export default function App() {
     <Layout>
       <HeroSection />
       <ServicesSection />
-      <AvailableSlotsSection />
-      <BookingSection />
-      <TeamSection />
       <GallerySection />
       <TransformationsSection />
+      <ExperienceSection />
+      <TeamSection />
       <TestimonialsSection />
       <AboutSection />
+      <AvailableSlotsSection />
+      <BookingSection />
       <ContactSection />
     </Layout>
   )

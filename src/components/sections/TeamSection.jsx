@@ -67,9 +67,10 @@ export default function TeamSection() {
     <section id="team" className="bg-charcoal py-16 md:py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="The Craftsmen"
-          title="Meet Your Barbers"
-          subtitle="Internationally trained, obsessively precise. These are the hands behind the work."
+          eyebrow="Your Barbers"
+          title="Meet the Team"
+          subtitle="Three barbers. All with regulars who ask for them by name. Pick yours."
+          size="md"
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {config.barbers.map((barber, i) => (
