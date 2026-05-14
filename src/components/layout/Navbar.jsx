@@ -33,7 +33,7 @@ export default function Navbar() {
           {/* Logo */}
           <a href="#" className="flex flex-col leading-none group" aria-label={config.brand.name}>
             {config.brand.logo ? (
-              <img src={`/${config.brand.logo}`} alt={config.brand.name} className="h-8 w-auto" />
+              <img src={`/${config.brand.logo}`} alt={config.brand.name} className="h-12 w-auto max-w-[160px] object-contain" />
             ) : (
               <>
                 <span className="font-heading text-lg md:text-xl font-bold tracking-[0.1em] text-white uppercase group-hover:text-gold transition-colors duration-200">

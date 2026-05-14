@@ -8,27 +8,27 @@
 export const client = {
 
   // ── Identity ──────────────────────────────────────────────
-  name:          'North Shore Barber Co.',
-  wordmarkLine1: 'North Shore',       // top line in navbar / footer
-  wordmarkLine2: 'Barber Co.',        // bottom line in navbar / footer
+  name:          'Mr. Cutz',
+  wordmarkLine1: 'Mr. Cutz',          // top line in navbar / footer
+  wordmarkLine2: 'Smithtown, NY',     // bottom line in navbar / footer
   tagline:       'Sharp Cuts. Clean Fades.',
-  city:          'Long Island',       // used in hero eyebrow
+  city:          'Smithtown',         // used in hero eyebrow
 
   // ── Contact ───────────────────────────────────────────────
-  phone:      '+1 (516) 123-4567',
-  sms:        '+15161234567',          // number used for sms: links (usually same as phone)
+  phone:      '(631) 863-8022',
+  sms:        '+16318638022',          // number used for sms: links (usually same as phone)
   instagram:  '',                      // full URL: https://instagram.com/yourshop
   bookingUrl: '',                      // Fresha / Square / Booksy etc.
                                        // if set, CTAs link here instead of the on-page form
 
   // ── Location ──────────────────────────────────────────────
-  address:  '142 Main Street, Huntington, NY 11743',
-  mapsUrl:  'https://maps.google.com/?q=142+Main+Street+Huntington+NY+11743',
+  address:  '302 Maple Ave, Smithtown, NY 11787',
+  mapsUrl:  'https://maps.google.com/?q=302+Maple+Ave+Smithtown+NY+11787',
 
   // ── Assets ────────────────────────────────────────────────
   // Drop files in the /public folder, then set filenames here.
-  logo:      '',                       // e.g. 'logo.png' — blank = text wordmark
-  heroImage: 'barberhero.png',          // hero background photo
+  logo:      'mrcutzlogo.jpg',         // e.g. 'logo.png' — blank = text wordmark
+  heroImage: 'barberhero.png',         // hero background photo
 
   // ── Hours ─────────────────────────────────────────────────
   hours: [

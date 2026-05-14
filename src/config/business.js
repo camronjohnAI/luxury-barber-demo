@@ -204,12 +204,12 @@ const profiles = {
 
     about: {
       headline: 'We Know This Town',
-      subheadline: "Huntington's spot for serious cuts.",
-      body: "North Shore Barber Co. has been cutting hair on Main Street since day one. No gimmicks, no attitude — just three barbers who know their craft and take pride in every head that sits in the chair.\n\nWe keep the shop tight, the schedule on time, and the cuts clean. 900+ five-star reviews from real people in the community. That's not a marketing number — that's what happens when you do the work right.",
+      subheadline: "Smithtown's spot for serious cuts.",
+      body: "Mr. Cutz has been cutting hair on Maple Ave since day one. No gimmicks, no attitude — just barbers who know their craft and take pride in every head that sits in the chair.\n\nWe keep the shop tight, the schedule on time, and the cuts clean. 900+ five-star reviews from real people in the community. That's not a marketing number — that's what happens when you do the work right.",
       stats: [
         { value: '900+', label: 'Five-Star Reviews' },
         { value: '4.9', label: 'Google Rating' },
-        { value: '10+', label: 'Years on Long Island' },
+        { value: '10+', label: 'Years in Smithtown' },
         { value: '3', label: 'Barbers on the Floor' },
       ],
     },

@@ -12,7 +12,7 @@ export default function Footer() {
           <div>
             <a href="#" className="flex flex-col leading-none mb-4">
               {config.brand.logo ? (
-                <img src={`/${config.brand.logo}`} alt={config.brand.name} className="h-8 w-auto" />
+                <img src={`/${config.brand.logo}`} alt={config.brand.name} className="h-12 w-auto max-w-[180px] object-contain self-start" />
               ) : (
                 <>
                   <span className="font-heading text-lg font-bold tracking-[0.1em] text-white uppercase">

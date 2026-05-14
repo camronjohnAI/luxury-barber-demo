@@ -21,7 +21,7 @@ export default function ContactSection() {
         <SectionHeading
           eyebrow="Find Us"
           title="Location & Hours"
-          subtitle={`We're on Main Street in Huntington — walk-ins welcome, appointments preferred.`}
+          subtitle={`Come find us at ${brand.address.split(',')[0]} — walk-ins welcome, appointments preferred.`}
           size="md"
         />
 

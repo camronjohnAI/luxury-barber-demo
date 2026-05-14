@@ -35,7 +35,7 @@ export default function AboutSection() {
             {/* Gold accent line */}
             <div className="mt-8 border-l-2 border-gold pl-5">
               <p className="text-cream-muted text-sm italic leading-relaxed">
-                "Huntington's been good to us. We try to return the favor — one cut at a time."
+                "Smithtown's been good to us. We try to return the favor — one cut at a time."
               </p>
               <p className="text-gold text-xs mt-2 font-medium">— {brand.name}</p>
             </div>
